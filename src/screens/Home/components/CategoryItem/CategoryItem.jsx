@@ -9,7 +9,7 @@ const CategoryItem = ( {category} ) => {
   return (
    <Pressable onPress={() => console.log(`Esta es la categoria ${category}`)}>
     <Card style={styles.cardContainer}>
-        <Text style={styles.text}>{category}</Text>
+        <Text style={styles.text}> {category} </Text>
     </Card>
     </Pressable>
   )
