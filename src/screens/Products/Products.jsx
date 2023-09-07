@@ -31,11 +31,14 @@ const Products = ({category}) => {
     <View style={styles.container}> 
       <Header title={category} />
       <SearchInput onSearch={setKeyword}/>
-
       <View style={styles.listContainer}>
         <FlatList 
         data={arrProducts}
-        renderItem={({item}) => (<View> <Text> {item.title} </Text></View>)}
+        renderItem={({item}) => (
+        <View>
+           <Text> {item.title} </Text>
+        </View>
+        )}
         keyExtractor={item => item.id}
         />
         
