@@ -4,12 +4,18 @@ import { colors } from "../../constants/colors";
 export default styles = StyleSheet.create({
     container: {
         backgroundColor: colors.primary,
-        height: 80,
-        width: "200%",
-        justifyContent: "center",
-        alignItems: "center"
+        height: 100,
+        width: "100%",
+        justifyContent: "left",
+        alignItems: "center",
+        borderBottomWidth: 2,
+        borderColor: colors.quaternary,
     },
     text: {
+        marginTop: 40,
+        padding: 10,
         fontSize: 30,
+        color: colors.secondary,
+        fontWeight: "bold",
     }
 })
