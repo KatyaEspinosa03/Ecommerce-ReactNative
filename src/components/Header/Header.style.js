@@ -16,6 +16,6 @@ export default styles = StyleSheet.create({
         padding: 10,
         fontSize: 30,
         color: colors.secondary,
-        fontWeight: "bold",
+        fontFamily: 'GaretHeavy'
     }
 })

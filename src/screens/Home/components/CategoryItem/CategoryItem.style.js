@@ -14,7 +14,7 @@ export default styles = StyleSheet.create({
     },
     text: {
         color: colors.secondary,
-        fontWeight: "bold",
         fontSize: 20,
+        fontFamily: 'GaretBook'
     }
 })
