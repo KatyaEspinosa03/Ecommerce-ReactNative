@@ -10,7 +10,9 @@ export default styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "flex-start",
         height: 60,
-
+        minWidth: 90,
+        maxWidth: 250,
+        width: '90%',
     },
     text: {
         color: colors.secondary,
