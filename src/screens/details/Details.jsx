@@ -3,10 +3,15 @@ import React from 'react'
 import Header from '../../components/Header/Header'
 import styles from './details.style'
 
-const Details = ({product}) => {
+const Details = ({ route }) => {
+
+  const {product} = route.params 
+  
   return (
     <View style={styles.container}>
+
     <Header title={'Detalle'}/>
+
     <Image style={styles.image}
     source={{ uri: product.images[0]}} />
     <Text  styles={styles.title}> {product.title} </Text>
