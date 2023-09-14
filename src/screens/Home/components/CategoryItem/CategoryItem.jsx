@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import styles from './CategoryItem.style'
 
 
-const CategoryItem = ( {category, navigation} ) => {
+const CategoryItem = ( {category, setCategorySelected ,navigation} ) => {
 
   const {height, width} = useWindowDimensions()
 
@@ -14,7 +14,9 @@ const CategoryItem = ( {category, navigation} ) => {
   },[])
 
   return (
-   <Pressable onPress={() => navigation.navigate('Products', { category })}>
+   <Pressable onPress={() => navigation.navigate('Products', { category })
+   //setCategorySelected(category)
+  }>
     <Card style={styles.cardContainer}>
       
         <Text style={styles.text}> {category} </Text>
