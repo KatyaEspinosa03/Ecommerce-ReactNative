@@ -6,17 +6,17 @@ export default styles = StyleSheet.create({
         marginTop: 10,
         marginHorizontal: 20,
         // marginVertical: 10,
-        padding: 10,
+        padding: 15,
         justifyContent: "center",
         alignItems: "flex-start",
         height: 60,
         minWidth: 90,
-        maxWidth: 250,
+        maxWidth: 500,
         width: '90%',
     },
     text: {
         color: colors.secondary,
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: 'GaretBook'
     }
 })

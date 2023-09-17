@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import AntDesign from '@expo/vector-icons/AntDesign'
 import styles from './SearchInput.styles'
+import { colors } from '../../constants/colors'
 
 
 const SearchInput = ({onSearch}) => {
@@ -25,11 +26,11 @@ const SearchInput = ({onSearch}) => {
      placeholder="Search Product"/>
 
      <Pressable onPress={search}>
-        <AntDesign name='search1' size={25} color={'black'}/>
+        <AntDesign name='search1' size={25} color={colors.tertiary}/>
      </Pressable>
 
      <Pressable onPress={clearInput}>
-        <AntDesign name='closecircleo' size={25} color={'black'}/>
+        <AntDesign name='closecircleo' size={25} color={colors.tertiary} marginRight={5}/>
      </Pressable>
     </View>
   )

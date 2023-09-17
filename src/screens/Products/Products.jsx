@@ -2,7 +2,8 @@ import { View, Text, FlatList, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import allProducts from '../../data/products'
 import styles from './Products.styles'
-import {Header, SearchInput} from '../../components'
+import {Header, SearchInput, Card} from '../../components'
+
 
 
 const Products = ({ navigation, route }) => {
@@ -37,7 +38,10 @@ const Products = ({ navigation, route }) => {
         data={arrProducts}
         renderItem={({item}) => (
         <TouchableOpacity onPress={() => navigation.navigate('Details', { product: item })}>
-           <Text> {item.title} </Text>
+          <Card style={styles.cardContainer}> 
+            <Text style={styles.text}> {item.title} </Text>
+          </Card>
+
         </TouchableOpacity>
         )}
         keyExtractor={item => item.id}
