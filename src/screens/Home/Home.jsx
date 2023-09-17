@@ -6,16 +6,15 @@ import {Header} from '../../components'
 import { View, FlatList } from 'react-native'
 import styles from './Home.styles'
 
-const Home = ({navigation, setCategorySelected}) => {
+const Home = ({navigation}) => {
   return (
 
   <View style={styles.container}>
-      <Header title={"Home"}/>
+      {/* <Header title={"Home"}/> */}
     <FlatList 
     data={dataCategories}
     keyExtractor={category => category}
     renderItem={({item}) => <CategoryItem category={item} navigation={navigation}
-    // setCategorySelected={setCategorySelected}
     />}
     />
   </View>

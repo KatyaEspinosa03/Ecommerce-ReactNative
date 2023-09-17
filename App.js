@@ -2,7 +2,7 @@
 import {useFonts} from 'expo-font'
 import { useState } from 'react';
 import fonts from "./src/global/fonts";
-import StackNavigator from './src/navegation/StackNavegator';
+import StackNavigator from './src/navegation/StackNavigator';
 import { Home } from './src/screens';
 
 export default function App() {

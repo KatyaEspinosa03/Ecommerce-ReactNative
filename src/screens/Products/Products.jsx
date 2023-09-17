@@ -13,6 +13,9 @@ const Products = ({ navigation, route }) => {
    const { category } = route.params
 
    useEffect(() => {
+
+    navigation.setOptions({title: category})
+
     if(category){
         const products = allProducts.filter(
             product => product.category === category)
@@ -27,11 +30,11 @@ const Products = ({ navigation, route }) => {
             )
         setArrProducts(productsFiltered)
     }
-   },[category, keyword])
+   },[category, keyword]);
 
   return (
     <View style={styles.container}> 
-      <Header title={category} />
+      {/* <Header title={category} /> */}
       <SearchInput onSearch={setKeyword}/>
       <View style={styles.listContainer}>
         <FlatList 

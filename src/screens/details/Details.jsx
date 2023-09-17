@@ -10,7 +10,7 @@ const Details = ({ route }) => {
   return (
     <View style={styles.container}>
 
-    <Header title={'Detalle'}/>
+    {/* <Header title={product.title}/> */}
     <Image style={styles.image}
     source={{ uri: product.images[0]}} />
 
