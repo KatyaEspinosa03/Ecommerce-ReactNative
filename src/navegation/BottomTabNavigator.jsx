@@ -4,6 +4,7 @@ import StackNavigator from "./StackNavigator";
 import { StyleSheet } from "react-native";
 import { colors } from "../constants/colors";
 import Feather from '@expo/vector-icons/Feather'
+import OrdersNavigator from "./OdersNavigator";
 
 const BottomTab = createBottomTabNavigator()
 
@@ -17,12 +18,32 @@ function BottomTabNavigator() {
         }}
     >
 
-        <BottomTab.Screen name="HomeNav" component={StackNavigator} /> 
+        <BottomTab.Screen name="HomeNav" component={StackNavigator}
+                        options={{
+                            tabBarIcon: ({focused}) => (
+                                <Feather 
+                                name='home' 
+                                size={24} 
+                                color={focused ? colors.secondary : colors.primary }
+                                />
+                            ),
+                        }} /> 
         <BottomTab.Screen name="CartNav" component={CartNavigator}
                 options={{
                     tabBarIcon: ({focused}) => (
                         <Feather 
-                        name='shopping-bag' 
+                        name='shopping-cart' 
+                        size={24} 
+                        color={focused ? colors.secondary : colors.primary }
+                        />
+                    ),
+                }}/>
+
+<BottomTab.Screen name="OrderNav" component={OrdersNavigator}
+                options={{
+                    tabBarIcon: ({focused}) => (
+                        <Feather 
+                        name='list' 
                         size={24} 
                         color={focused ? colors.secondary : colors.primary }
                         />
