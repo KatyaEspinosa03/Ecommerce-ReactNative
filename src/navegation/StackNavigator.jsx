@@ -1,4 +1,3 @@
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button, View } from "react-native";
 import { Header } from "../components";
@@ -9,7 +8,6 @@ const Stack = createNativeStackNavigator()
 
 function StackNavigator() {
     return(
-        <NavigationContainer>
             <Stack.Navigator initialRouteName='Home' 
             screenOptions={({route, navigation}) => ({
                 headerShown: true,
@@ -46,7 +44,6 @@ function StackNavigator() {
                 })}/>
                 <Stack.Screen name='Details' component={Details} />
             </Stack.Navigator>
-        </NavigationContainer>
     )
 }
 

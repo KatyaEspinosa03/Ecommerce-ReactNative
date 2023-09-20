@@ -1,9 +1,9 @@
 
 import {useFonts} from 'expo-font'
-import { useState } from 'react';
 import fonts from "./src/global/fonts";
 import StackNavigator from './src/navegation/StackNavigator';
-import { Home } from './src/screens';
+import { NavigationContainer } from "@react-navigation/native";
+import BottomTabNavigator from './src/navegation/BottomTabNavigator';
 
 export default function App() {
 
@@ -14,16 +14,15 @@ export default function App() {
     return null
   }
 
-  return <StackNavigator />
+  return (
 
-  // Agrego el código del renderizado condicional que tenía anteriormente 
+  <NavigationContainer>
+      <BottomTabNavigator />
+  </NavigationContainer>
 
-  // const [categorySelected, categorySelected] = useState('')
+  )
 
-  // return categorySelected ?(
-    // <Products category={categorySelected}
-    // ) : (
-    //   <Home setCategorySelected = {categorySelected}/>
-    //   )
+
+
 }
 

@@ -7,7 +7,7 @@ export default styles = StyleSheet.create({
         height: 50,
         borderWidth: 1,
         borderColor: colors.secondary,
-        borderRadius: "50%",
+        // borderRadius: "50%",
         shadowColor: colors.quaternary,
         shadowOffset: {height: 2, width: 3},
         elevation: 10,
