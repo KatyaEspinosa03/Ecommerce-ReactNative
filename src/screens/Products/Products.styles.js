@@ -7,9 +7,9 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.primary,
     },
     listContainer: {
-        paddingHorizontal: 15,
         flex: 1,
         marginTop: 15,
+        padding: 10
     },
     wrapperStyle:{
         justifyContent: 'space-between'

@@ -8,11 +8,17 @@ export default styles = StyleSheet.create({
         paddingHorizontal: 16,
         paddingTop: 20,
     },
+    productContainer: {
+        backgroundColor: colors.tertiary,
+        borderRadius: 15,
+        marginTop: 10,
+        padding: 10,
+    },
     image:{
-        height: '40%',
+        height: '50%',
         width: '80%',
-        borderWidth: 8,
-        borderColor: colors.tertiary,
+        borderWidth: 5,
+        borderColor: colors.quaternary,
         borderRadius: 8,
         marginTop: 15,
         alignSelf: 'center',
@@ -22,20 +28,23 @@ export default styles = StyleSheet.create({
         marginTop: 10,
         fontSize: 24,
         fontFamily: "GaretHeavy",
-        color: colors.tertiary,
+        color: colors.secondary,
     },
     textDescription: {
         fontSize: 16,
         fontFamily: "GaretBook",
-        color: colors.tertiary,
+        color: colors.quaternary,
     },
     price: {
         fontSize: 20,
         fontFamily: "GaretBook",
-        color: colors.tertiary,
+        color: colors.quaternary,
         alignSelf: 'flex-start',
         marginTop: 5,
         marginVertical: 5,
+    },
+    counter:{
+        marginTop: 20,
     }
 
 })

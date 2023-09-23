@@ -10,11 +10,18 @@ export const counterSlice = createSlice({
     initialState,
     //Los reducers son las funciones a ejecutar 
     reducers: {
-        increment: (state) => {
-            state.value +=1
+        increment: (state, action) => {
+            const productId = action.payload
+            if (!state[productId]) {
+                state[productId] = 0
+            }
+            state[productId] +=1
         },
-        decrement: (state) => {
-            state.value -=1
+        decrement: (state, action) => {
+            const productId = action.payload
+            if(state[productId] && state[productId] > 0){
+                state[productId] -=1
+            }
         },
         incrementByAmount: (state, action) => {
             state.value += action.payload

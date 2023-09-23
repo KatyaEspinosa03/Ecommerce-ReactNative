@@ -5,13 +5,11 @@ import { CategoryItem } from './components'
 import {Header} from '../../components'
 import { View, FlatList } from 'react-native'
 import styles from './Home.styles'
-import Counter from '../../components/Counter'
 
 const Home = ({navigation}) => {
   return (
 
   <View style={styles.container}>
-    <Counter />
       {/* <Header title={"Home"}/> */}
     <FlatList 
     data={dataCategories}

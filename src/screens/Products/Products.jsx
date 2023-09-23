@@ -2,7 +2,8 @@ import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import allProducts from '../../data/products'
 import styles from './Products.styles'
-import {Header, SearchInput} from '../../components'
+import {Header, SearchInput, Counter} from '../../components'
+
 
 
 
@@ -54,6 +55,8 @@ const Products = ({ navigation, route }) => {
           />
           <Text style={styles.text}> {item.title} </Text>
           <Text style={styles.price}> ${item.price} </Text>
+          <Counter product={item} />
+
 
         </TouchableOpacity>
         )}
