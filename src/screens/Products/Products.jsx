@@ -1,8 +1,8 @@
-import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import allProducts from '../../data/products'
 import styles from './Products.styles'
-import {Header, SearchInput, Card} from '../../components'
+import {Header, SearchInput} from '../../components'
 
 
 
@@ -39,11 +39,21 @@ const Products = ({ navigation, route }) => {
       <View style={styles.listContainer}>
         <FlatList 
         data={arrProducts}
+        numColumns={2}
+        columnWrapperStyle={styles.wrapperStyle}
         renderItem={({item}) => (
-        <TouchableOpacity onPress={() => navigation.navigate('Details', { product: item })}>
-          <Card style={styles.cardContainer}> 
-            <Text style={styles.text}> {item.title} </Text>
-          </Card>
+        <TouchableOpacity 
+        style={styles.productContainer}
+        onPress={() => navigation.navigate('Details', { product: item })}
+        >
+          <Image 
+          style={styles.image}
+          source={{
+            uri: item.images[0]
+          }}
+          />
+          <Text style={styles.text}> {item.title} </Text>
+          <Text style={styles.price}> ${item.price} </Text>
 
         </TouchableOpacity>
         )}
