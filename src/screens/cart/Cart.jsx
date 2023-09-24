@@ -2,7 +2,7 @@ import { View, Text, FlatList, Pressable } from 'react-native'
 import React from 'react'
 import styles from './Cart.styles.js'
 import dataCart from '../../data/dataCart.js'
-import CartItem from './components/CartItem.jsx'
+import CartItem from './components/cartItem/CartItem'
 
 const Cart = () => {
 
