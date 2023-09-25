@@ -8,7 +8,6 @@ import { Counter, AddToCart } from '../../components'
 const Details = ({ route }) => {
 
   const {product} = route.params 
-  
   return (
     <View style={styles.container}>
 
@@ -22,7 +21,7 @@ const Details = ({ route }) => {
       <Text style={styles.textDescription}> {product.description} </Text>
         <View style={styles.counter}>
         <Counter product={product}/>
-        <AddToCart />
+        <AddToCart product={product}/>
         </View>
   
       </View>

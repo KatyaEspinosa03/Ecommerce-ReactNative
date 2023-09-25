@@ -3,14 +3,18 @@ import { colors } from "../../../../constants/colors";
 
 export default styles = StyleSheet.create({
     container: {
+        marginTop: 10,
         flex: 1,
-        backgroundColor: colors.primary,
+        marginHorizontal: 10,
+        backgroundColor: colors.tertiary,
         padding: 8,
-        borderBottomWidth: 1,
+        borderBottomWidth: 3,
         borderBottomColor: colors.primary
     },
     name: {
         fontSize: 18,
+        fontFamily: 'GaretHeavy',
+        color: colors.primary
     },
     details: {
         flex: 1,
@@ -18,5 +22,10 @@ export default styles = StyleSheet.create({
         flexWrap: 'wrap',
         alignItems: 'center',
         justifyContent: 'space-between'
+    },
+    detailsText: {
+        fontFamily: 'GaretBook',
+        fontSize: 16,
+        color: colors.primary,
     }
 })

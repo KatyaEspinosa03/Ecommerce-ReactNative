@@ -3,18 +3,23 @@ import React from 'react'
 import styles from './Cart.styles.js'
 import dataCart from '../../data/dataCart.js'
 import CartItem from './components/cartItem/CartItem'
+import { useSelector } from 'react-redux'
 
 const Cart = () => {
 
-  const renderItem = () => (
-    <CartItem />
+  const cartItems = useSelector((state) => state.cart.cartItems)
+
+
+  const renderItem = ({item}) => (
+    <CartItem 
+    product={item} />
   )
   return (
     <View style={styles.container}>
       
       <View>
       <FlatList 
-      data={dataCart}
+      data={cartItems}
       keyExtractor={item => item.id}
       renderItem={renderItem}/>
       </View>
