@@ -1,22 +1,27 @@
 
 import React from 'react'
-import dataCategories from '../../data/dataCategories'
 import { CategoryItem } from './components'
 import {Header} from '../../components'
 import { View, FlatList } from 'react-native'
 import styles from './Home.styles'
+import { useGetCategoriesQuery } from '../../services/shopAPI'
 
 const Home = ({navigation}) => {
+
+  const { data, isLoading } = useGetCategoriesQuery()
   return (
 
   <View style={styles.container}>
       {/* <Header title={"Home"}/> */}
-    <FlatList 
-    data={dataCategories}
-    keyExtractor={category => category}
-    renderItem={({item}) => <CategoryItem category={item} navigation={navigation}
-    />}
-    />
+      {!isLoading && (
+            <FlatList 
+            data={data}
+            keyExtractor={category => category.title}
+            renderItem={({item}) => <CategoryItem category={item.title} navigation={navigation}
+            />}
+            />
+      )}
+
   </View>
 
   )
