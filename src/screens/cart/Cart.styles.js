@@ -7,13 +7,13 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.primary,
     },
     containerCart: {
-        justifyContent: 'flex-end',
-        alignContent: 'flex-end',
+        alignItems: 'flex-end',
         marginLeft: 'auto',
         width: '40%',
         padding: 10,
         marginHorizontal: 10,
         marginTop: 10,
+        height: '50%'
     },
     textPrice: {
         textAlign: 'right',
@@ -31,6 +31,6 @@ export default styles = StyleSheet.create({
         marginTop: 5,
         borderWidth: 2,
         borderColor: colors.tertiary,
-        borderRadius: 10
+        borderRadius: 10,
     }
 })

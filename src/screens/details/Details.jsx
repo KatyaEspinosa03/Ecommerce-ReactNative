@@ -20,13 +20,13 @@ const Details = ({ route }) => {
     console.log(quantity)
   };
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
 
     {/* <Header title={product.title}/> */}
     <View style={styles.productContainer}>
       <Image style={styles.image}
       source={{ uri: product.images[0]}} />
-
+    <ScrollView>
       <Text  style={styles.textProduct}> {product.title} </Text>
       <Text  style={styles.price}> {`$ ${product.price}`} </Text>
       <Text style={styles.textDescription}> {product.description} </Text>
@@ -34,9 +34,9 @@ const Details = ({ route }) => {
         <Counter product={product}/>
         <AddToCart onPress={handleAddToCart}/>
         </View>
-  
+        </ScrollView>
       </View>
-    </ScrollView>
+    </View>
   )
 }
 
