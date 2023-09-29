@@ -16,14 +16,15 @@ const Products = ({ navigation, route }) => {
   const category = useSelector(state => state.shop.categorySelected)
    const [keyword, setKeyword] = useState('')
    const { data, isLoading } = useGetProductsByCategoryQuery(category)
-  //  const { category } = route.params
+
 
    useEffect(() => {
 
-    // navigation.setOptions({title: category})
-console.log(data)
+
+  console.log(data)
+    let productsFiltered;
     if(data){
-        const productsFiltered = data.filter(
+        productsFiltered = data.filter(
             product => product.title.includes(keyword)
             )
     }

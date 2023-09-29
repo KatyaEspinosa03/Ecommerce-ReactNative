@@ -5,16 +5,15 @@ export default styles = StyleSheet.create({
     container: {
         marginTop: 10,
         flex: 1,
-        marginHorizontal: 10,
+        marginHorizontal: 12,
         backgroundColor: colors.tertiary,
         padding: 8,
-        borderBottomWidth: 3,
-        borderBottomColor: colors.primary
+        borderRadius: 10,
     },
     name: {
         fontSize: 18,
         fontFamily: 'GaretHeavy',
-        color: colors.primary
+        color: colors.quaternary
     },
     details: {
         flex: 1,
