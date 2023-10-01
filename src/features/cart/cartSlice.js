@@ -26,7 +26,7 @@ export const cartSlice = createSlice({
                         item.quantity += action.payload.quantity
                         return item
                     }
-                    return
+                    return item
                 })
                 const total = itemsUpdated.reduce(
                     (acc, current) => (acc += current.price * current.quantity), 0

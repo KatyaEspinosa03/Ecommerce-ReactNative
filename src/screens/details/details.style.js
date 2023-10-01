@@ -7,6 +7,7 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.primary,
         paddingHorizontal: 16,
         paddingTop: 20,
+        paddingBottom: 60,
     },
     productContainer: {
         backgroundColor: colors.tertiary,

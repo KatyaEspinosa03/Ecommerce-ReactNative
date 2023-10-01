@@ -2,7 +2,7 @@ import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import allProducts from '../../data/products'
 import styles from './Products.styles'
-import {Header, SearchInput, Counter} from '../../components'
+import {Header, SearchInput} from '../../components'
 import { useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../../services/shopAPI'
 
@@ -16,24 +16,23 @@ const Products = ({ navigation, route }) => {
   const category = useSelector(state => state.shop.categorySelected)
    const [keyword, setKeyword] = useState('')
    const { data, isLoading } = useGetProductsByCategoryQuery(category)
+   console.log(data)
 
+  //  useEffect(() => {
 
-   useEffect(() => {
-
-
-  console.log(data)
-    let productsFiltered;
-    if(data){
-        productsFiltered = data.filter(
-            product => product.title.includes(keyword)
-            )
-    }
-   },[keyword]);
-
+  //   let productsFiltered;
+  //   if(data){
+  //       productsFiltered = data.filter(
+  //           product => product.title.includes(keyword)
+  //           )
+  //   }
+  //  },[keyword]);
+   
+  //  console.log(keyword)
   return (
     <View style={styles.container}> 
       {/* <Header title={category} /> */}
-      <SearchInput onSearch={setKeyword}/>
+      {/* <SearchInput onSearch={setKeyword}/> */}
       <View style={styles.listContainer}>
         {!isLoading && (
               <FlatList 
@@ -53,7 +52,6 @@ const Products = ({ navigation, route }) => {
                 />
                 <Text style={styles.text}> {item.title} </Text>
                 <Text style={styles.price}> ${item.price} </Text>
-                <Counter product={item} />
       
       
               </TouchableOpacity>
