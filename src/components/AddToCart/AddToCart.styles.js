@@ -15,5 +15,8 @@ export default styles = StyleSheet.create({
         color: colors.tertiary,
         fontSize: 25,
 
+    },
+    pressedStyle: {
+        backgroundColor: colors.quaternary,
     }
 })

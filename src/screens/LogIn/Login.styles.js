@@ -8,6 +8,10 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center'
     },
+    image:{
+        height: '40%',
+        aspectRatio: 1,   
+    },
     loginContainer:{
         width: '100%',
         paddingHorizontal: 20,
@@ -21,6 +25,7 @@ export default styles = StyleSheet.create({
         marginVertical: 10,
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: 10,
     },
     loginButton: {
         backgroundColor: colors.tertiary,
@@ -28,7 +33,18 @@ export default styles = StyleSheet.create({
         height: 40,
         borderRadius: 10,
         marginBottom: 15,
+        marginTop: 5,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    text:{
+        fontFamily: 'GaretHeavy',
+        color: colors.secondary,
+        fontSize: 20,
+        padding: 5,
+    },
+    subtext:{
+        fontFamily: 'GaretBook',
+        color: colors.quaternary
     }
 })

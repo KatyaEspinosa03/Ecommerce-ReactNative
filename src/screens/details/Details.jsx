@@ -12,6 +12,7 @@ const Details = ({ route }) => {
   const {product} = route.params 
   const dispatch = useDispatch();
   const quantity = useSelector((state) => state.counter[product.id])
+  
 
   const handleAddToCart = () => {
     // utilizo quantity proveniente del counter para tomar en cuenta la cantidad que el 

@@ -9,15 +9,12 @@ const AuthStack = createNativeStackNavigator()
 function AuthStackNavigator() {
     return(
             <AuthStack.Navigator initialRouteName='Signup' 
-            screenOptions={({route, navigation}) => ({
+            screenOptions={() => ({
                 headerShown: false,
             })}>
                     
                 <AuthStack.Screen name='Signup' component={Signup} />
-                <AuthStack.Screen name='Login' component={Login}
-                options={({route}) => ({
-                    headerTitle: route.params.category || "Productos"
-                })}/>
+                <AuthStack.Screen name='Login' component={Login}/>
             </AuthStack.Navigator>
     )
 }

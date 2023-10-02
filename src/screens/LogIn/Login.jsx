@@ -1,22 +1,30 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
+import { View, Text, TextInput, Pressable, Image } from 'react-native'
 import React from 'react'
 import styles from './Login.styles'
+import logo from '../../assets/images/logo.png'
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
      <View style={styles.loginContainer}> 
-        <Text>
+
+     <Image source={logo}
+     style={styles.image}/>
+
+        <Text style={styles.text}>
             Login to start 
         </Text>
         <TextInput style={styles.inputEmail}/>
         <TextInput style={styles.inputEmail}/>
         <Pressable style={styles.loginButton}>
-            <Text> Login </Text>
+            <Text style={styles.subtext}> Login </Text>
         </Pressable>
-        <Text> you don't have an account? </Text>
-        <Pressable style={styles.loginButton}>
-            <Text> Sign up</Text>
+        <Text style={styles.text}> you don't have an account? </Text>
+        <Pressable style={styles.loginButton}
+        onPress={() => {
+          navigation.navigate('Signup')
+        }}>
+            <Text style={styles.subtext}> Sign up</Text>
         </Pressable>
      </View>
     </View>

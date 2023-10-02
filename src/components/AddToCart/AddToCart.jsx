@@ -1,6 +1,7 @@
 import { View, Text, Pressable } from 'react-native'
 import React from 'react'
 import styles from './AddToCart.styles'
+import { useState } from 'react'
 
 
 const AddToCart = ({product, onPress}) => {

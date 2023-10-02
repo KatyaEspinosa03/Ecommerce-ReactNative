@@ -28,13 +28,6 @@ function StackNavigator() {
 
             </View>
             ),
-            // headerLeft: () => (
-            //     <Button 
-            //     title="Back"
-            //     onPress={() => navigation.goBack}
-            //     color={colors.secondary}
-            //     />
-            // ),
             })} >
                     
                 <Stack.Screen name='Home' component={Home} />
