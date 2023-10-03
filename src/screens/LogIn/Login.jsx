@@ -12,14 +12,16 @@ const Login = ({navigation}) => {
      style={styles.image}/>
 
         <Text style={styles.text}>
-            Login to start 
+            Ingresa a tu cuenta
         </Text>
-        <TextInput style={styles.inputEmail}/>
-        <TextInput style={styles.inputEmail}/>
+        <TextInput style={styles.inputEmail}
+        placeholder="ingresa tu correo electrónico"/>
+        <TextInput style={styles.inputEmail}
+        placeholder="ingresa tu contraseña"/>
         <Pressable style={styles.loginButton}>
             <Text style={styles.subtext}> Login </Text>
         </Pressable>
-        <Text style={styles.text}> you don't have an account? </Text>
+        <Text style={styles.text}> ¿Todavía no tienes una cuenta?</Text>
         <Pressable style={styles.loginButton}
         onPress={() => {
           navigation.navigate('Signup')

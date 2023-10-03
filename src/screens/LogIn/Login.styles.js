@@ -26,6 +26,7 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,
+        padding: 10,
     },
     loginButton: {
         backgroundColor: colors.tertiary,
