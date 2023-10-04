@@ -1,10 +1,10 @@
 import { View, Text, TextInput, Pressable, Image } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './Signup.styles'
 import logo from '../../assets/images/logo.png'
-import { useState } from 'react'
 import { useSignUpMutation } from '../../services/authApi'
 import { useDispatch } from 'react-redux'
+import { setUser } from '../../features/auth/authSlice'
 
 const Signup = ({navigation}) => {
   const [email, setEmail] = useState("")
@@ -17,9 +17,12 @@ const Signup = ({navigation}) => {
     console.log(email, password, confirmPassword)
     triggerSignup({
       email, 
-      password
+      password,
     })
     console.log(result)
+    if(result.isSuccess) {
+      dispatch(setUser(result))
+    }
   }
   return (
     <View style={styles.container}>
