@@ -5,9 +5,12 @@ import * as ImagePicker from 'expo-image-picker'
 import logo from '../../assets/images/logo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCameraImage } from '../../features/auth/authSlice'
+import { usePostProfileImageMutation } from '../../services/shopAPI'
 
 const Profile = () => {
    const image = useSelector(state => state.auth.imageCamera)
+   const {localId} = useSelector(state => state.auth)
+   const [triggerSaveProfileImage, result] = usePostProfileImageMutation()
     const dispatch = useDispatch()
 
     const verifyCameraPermission = async () => {
@@ -29,26 +32,44 @@ const Profile = () => {
           quality: 0.4,
           })
           if(!result.canceled){
-            setImage(`data:image/jpeg;based64,${result.assets[0].base64}`)
+            console.log(result.assets)
+            dispatch(setCameraImage(`data:image/jpeg;base64,${result.assets[0].base64}`))
+            // setImage(`data:image/jpeg;based64,${result.assets[0].base64}`)
           }
       }
     }
     const confirmImage = () => {
-      dispatch(setCameraImage(image))
+      triggerSaveProfileImage({image, localId})
+      console.log(result)
+
     }
 
   return (
     <View style={styles.container}>
-        {image ? null :(
+        {image ?
+         (
+         <Image
+            source={{uri: image}}
+            style={styles.image}
+            resizeMode='cover'
+            />
+            ) :(
             <Image
             source={logo}
-            style={styles.image}/>
+            style={styles.image}
+            resizeMode='cover'/>
         )}
       
       <Pressable
       style={styles.cameraButton}
       onPress={pickImage}>
         <Text> Tomar foto de perfil </Text>
+      </Pressable>
+
+      <Pressable
+      style={styles.cameraButton}
+      onPress={confirmImage}>
+        <Text> Confirmar </Text>
       </Pressable>
     </View>
   )

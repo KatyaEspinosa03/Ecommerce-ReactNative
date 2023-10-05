@@ -7,8 +7,8 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.primary,
     },
     image:{
-        width: 150,
-        height: 150,
+        width: 200,
+        height: 200,
     },
     cameraButton: {
         backgroundColor: colors.secondary,

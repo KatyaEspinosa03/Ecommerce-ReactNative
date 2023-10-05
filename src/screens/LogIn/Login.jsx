@@ -2,8 +2,29 @@ import { View, Text, TextInput, Pressable, Image } from 'react-native'
 import React from 'react'
 import styles from './Login.styles'
 import logo from '../../assets/images/logo.png'
+import { useState } from 'react'
+import { useLoginMutation } from '../../services/authApi'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../features/auth/authSlice'
 
 const Login = ({navigation}) => {
+ const [email, setEmail] = useState('')
+ const [password, setPassword] = useState('')
+ const [triggerLogin, result] = useLoginMutation()
+ const dispatch = useDispatch()
+
+ const onSubmit = () => {
+  console.log(email,password)
+  triggerLogin({
+    email, 
+    password}
+  )
+  console.log(result)
+  if(result.isSuccess){
+    dispatch(setUser(result))
+  }
+ }
+
   return (
     <View style={styles.container}>
      <View style={styles.loginContainer}> 
@@ -15,10 +36,15 @@ const Login = ({navigation}) => {
             Ingresa a tu cuenta
         </Text>
         <TextInput style={styles.inputEmail}
-        placeholder="ingresa tu correo electrónico"/>
+        placeholder="ingresa tu correo electrónico"
+        value={email}
+        onChangeText={setEmail}/>
         <TextInput style={styles.inputEmail}
-        placeholder="ingresa tu contraseña"/>
-        <Pressable style={styles.loginButton}>
+        placeholder="ingresa tu contraseña"
+        value={password}
+        onChangeText={setPassword}/>
+        <Pressable style={styles.loginButton}
+        onPress={onSubmit}>
             <Text style={styles.subtext}> Login </Text>
         </Pressable>
         <Text style={styles.text}> ¿Todavía no tienes una cuenta?</Text>
