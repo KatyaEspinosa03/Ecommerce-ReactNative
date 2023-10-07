@@ -20,39 +20,55 @@ export const cartSlice = createSlice({
                 item => item.id === action.payload.id
                 )
 
+                let updatedCartItems;
+
             if(productRepeated){
-                const itemsUpdated = state.cartItems.map(item => {
+                updatedCartItems = state.cartItems.map(item => {
                     if(item.id === action.payload.id){
-                        item.quantity += action.payload.quantity
-                        return item
+                        item.quantity += action.payload.quantity;
+                        
                     }
-                    return item
-                })
-                const total = itemsUpdated.reduce(
-                    (acc, current) => (acc += current.price * current.quantity), 0
-                )
-                state = {
-                    ...state,
-                    cartItems: itemsUpdated,
-                    total,
-                    updatedAt: new Date().toLocaleString()
-                }
+                    return item;
+                });
             } else {
-                state.cartItems.push(action.payload)
-                const total = state.cartItems.reduce(
-                    (acc, current) => (acc += current.price * current.quantity), 0  
-                )
-                state = {
-                    ...state,
-                    total,
-                    updatedAt: new Date().toLocaleString(),
-                }
+                updatedCartItems = [...state.cartItems, action.payload];
             }
 
+            const total = updatedCartItems.reduce(
+                (acc, current) => (acc += current.price * current.quantity), 0
+            )
+            return {
+                ...state,
+                cartItems: updatedCartItems,
+                total,
+                updatedAt: new Date().toLocaleString()
+            }
             
         },
 
-        removeFromCart: (state,action) => {}
+        removeFromCart: (state,action) => {
+            const itemToRemove = state.cartItems.findIndex((item) => 
+            item.id == action.payload);
+
+            if (itemToRemove !== -1) {
+
+                const updatedCartItems = state.cartItems.filter(
+                    (item, index) =>  index !== itemToRemove
+                )
+                // state.cartItems.splice(itemToRemove, 1);
+
+                const total = updatedCartItems.reduce(
+                    (acc,current) => acc + current.price * current.quantity, 0
+                );
+
+                return {
+                    ...state,
+                    cartItems: updatedCartItems,
+                    total,
+                    updatedAt: new Date().toLocaleString()
+                };
+            }     
+        }
     }
 })
 
