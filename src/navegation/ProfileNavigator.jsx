@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button, View } from "react-native";
 import { Header } from "../components";
 import { colors } from "../constants/colors";
-import { Profile } from "../screens";
+import { Profile, Location } from "../screens";
 
 const ProfileStack = createNativeStackNavigator()
 
@@ -27,6 +27,7 @@ function ProfileNavigator() {
 })} >
                     
                 <ProfileStack.Screen name='Profile' component={Profile} />
+                <ProfileStack.Screen name='Location' component={Location} />
 
             </ProfileStack.Navigator>
     )

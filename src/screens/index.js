@@ -6,4 +6,5 @@ import Orders from "./oders/Orders";
 import Login from "./LogIn/Login";
 import Signup from "./Signup/Signup";
 import Profile from './Profile/Profile'
-export {Home, Products, Details, Cart, Orders, Login, Signup, Profile}
+import Location from "./Location/LocationScreen";
+export {Home, Products, Details, Cart, Orders, Login, Signup, Profile, Location}
