@@ -6,7 +6,7 @@ import * as Location from 'expo-location'
 import { MapPreview } from '../../components'
 
 const LocationScreen = () => {
-const [location, setLocation] = useState({latitue: '', longitude: ''})
+const [location, setLocation] = useState({latitude: '', longitude: ''})
 const [error, setError] = useState('')
 
 useEffect(() => {
@@ -19,7 +19,7 @@ useEffect(() => {
         console.log(status)
         let location = await Location.getCurrentPositionAsync({})
         setLocation({
-           latitue: location?.coords.latitude,
+           latitude: location?.coords.latitude,
            longitude: location.coords.longitude,
         })
     })()
@@ -29,14 +29,22 @@ useEffect(() => {
       <Text style={styles.title}>Tu ubicación</Text>
 
       {location ? ( 
+
       <View style={styles.withoutLocation}>
+        <View>
         <Text style={styles.locationText}>
-        Latitude: {location.latitue}
+        Latitude: {location.latitude}
         </Text>
         <Text style={styles.locationText}>
-        Longitude: {location.longitude}
+         Longitude: {location.longitude}
         </Text>
-        {/* <MapPreview location={location} /> */}
+        </View>
+
+        <View style={styles.withoutLocation}> 
+        <MapPreview location={location} />
+        </View>
+
+
     </View>
     ): ( 
     <View style={styles.withoutLocation}>
