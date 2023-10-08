@@ -5,6 +5,7 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
+        alignItems: 'center',
         backgroundColor: colors.primary,
         gap: 20,
         paddingBottom: 130
@@ -14,9 +15,21 @@ export default styles = StyleSheet.create({
         height: 200,
         borderWidth: 2,
         padding: 10,
-        borderColor: colors.tertiary,
+        borderColor: colors.quaternary,
+        backgroundColor: colors.quinary,
         justifyContent: 'center',
         alignItems: 'center',
         color: colors.secondary
+    },
+    locationText:{
+        fontFamily: 'GaretBook',
+        color: colors.tertiary,
+        padding: 2,
+    },
+    title: {
+        color: colors.secondary,
+        fontFamily: 'GaretHeavy',
+        fontSize: 25,
+        textDecorationLine: 'underline'
     }
 })

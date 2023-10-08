@@ -21,7 +21,7 @@ export default styles = StyleSheet.create({
     inputEmail:{
         width: '95%',
         backgroundColor: colors.tertiary,
-        height: 30,
+        height: 50,
         marginVertical: 10,
         justifyContent: 'center',
         alignItems: 'center',

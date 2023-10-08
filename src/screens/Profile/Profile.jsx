@@ -46,7 +46,9 @@ const Profile = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-        {image ?
+
+      <View style={styles.imageContainer}>
+      {image ?
          (
          <Image
             source={{uri: image}}
@@ -59,23 +61,29 @@ const Profile = ({navigation}) => {
             style={styles.image}
             resizeMode='cover'/>
         )}
-      
+      </View>
+
+
+        <View style={styles.buttonContainer}>
+
       <Pressable
       style={styles.cameraButton}
       onPress={pickImage}>
-        <Text> Tomar foto de perfil </Text>
+        <Text style={styles.text}> Tomar foto de perfil </Text>
       </Pressable>
 
       <Pressable
-      style={styles.cameraButton}
+      style={styles.confirmButton}
       onPress={confirmImage}>
-        <Text> Confirmar </Text>
+        <Text style={styles.text}> Confirmar </Text>
       </Pressable>
+        </View>
+
 
       <Pressable
-      style={styles.cameraButton}
+      style={styles.locationButton}
       onPress={() => navigation.navigate('Location')}>
-        <Text> Ubicación </Text>
+        <Text style={styles.text}> Conoce tu ubicación </Text>
       </Pressable>
     </View>
   )

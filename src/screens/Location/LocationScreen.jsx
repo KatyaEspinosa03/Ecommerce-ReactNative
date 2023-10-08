@@ -26,12 +26,15 @@ useEffect(() => {
 }, [])
   return (
     <View style={styles.container}>
-      <Text>My address</Text>
+      <Text style={styles.title}>Tu ubicación</Text>
 
       {location ? ( 
       <View style={styles.withoutLocation}>
-        <Text>
-            Lat: {location.latitue}, Longitude: {location.longitude}
+        <Text style={styles.locationText}>
+        Latitude: {location.latitue}
+        </Text>
+        <Text style={styles.locationText}>
+        Longitude: {location.longitude}
         </Text>
         {/* <MapPreview location={location} /> */}
     </View>
