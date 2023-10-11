@@ -5,9 +5,12 @@ import { Header } from "../components";
 import { colors } from "../constants/colors";
 import { Profile, Location } from "../screens";
 
+
+
 const ProfileStack = createNativeStackNavigator()
 
 function ProfileNavigator() {
+
     return(
             <ProfileStack.Navigator initialRouteName='Profile' 
             screenOptions={({navigation}) => ({
@@ -20,6 +23,7 @@ function ProfileNavigator() {
                 onPress={() => navigation.goBack()}
                 color={colors.tertiary}           
                 />
+
                 </View>
 
                 <Header title="Perfil"/>

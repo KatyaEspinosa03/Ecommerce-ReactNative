@@ -6,16 +6,23 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.primary,
         height: 100,
         width: "100%",
-        justifyContent: "center",
-        // alignItems: "center",
+        justifyContent: 'space-evenly',
+        alignItems: "center",
         borderBottomWidth: 2,
         borderColor: colors.quaternary,
+        flexDirection: 'row'
     },
     text: {
         marginTop: 40,
-        padding: 10,
+        // padding: 10,
         fontSize: 30,
         color: colors.secondary,
         fontFamily: 'GaretHeavy'
+    },
+    logoutIcon: {
+        padding: 2,
+        marginTop: 40,
+        marginRight: 30,
+        color: colors.tertiary
     }
 })
