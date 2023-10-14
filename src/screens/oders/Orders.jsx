@@ -5,7 +5,7 @@ import { useGetOrdersQuery } from '../../services/shopAPI'
 
 const Orders = () => {
 
-  const {data, isLoading} = useGetOrdersQuery
+  const {data, isLoading} = useGetOrdersQuery()
   return (
     <View styles={styles.container}>
       {!isLoading && (

@@ -1,6 +1,5 @@
 import { Text, View, Image, ScrollView } from 'react-native'
 import React from 'react'
-import Header from '../../components/Header/Header'
 import styles from './details.style'
 import { Counter, AddToCart } from '../../components'
 import {useSelector, useDispatch} from 'react-redux'
@@ -12,7 +11,6 @@ const Details = ({ route }) => {
   const {product} = route.params 
   const dispatch = useDispatch();
   const quantity = useSelector((state) => state.counter[product.id])
-  
 
   const handleAddToCart = () => {
     // utilizo quantity proveniente del counter para tomar en cuenta la cantidad que el 
@@ -24,7 +22,6 @@ const Details = ({ route }) => {
   return (
     <View style={styles.container}>
 
-    {/* <Header title={product.title}/> */}
     <View style={styles.productContainer}>
       <Image style={styles.image}
       source={{ uri: product.images[0]}} />

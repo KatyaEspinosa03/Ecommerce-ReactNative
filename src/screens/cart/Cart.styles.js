@@ -37,5 +37,5 @@ export default styles = StyleSheet.create({
         borderWidth: 2,
         borderColor: colors.tertiary,
         borderRadius: 10,
-    }
+    },
 })
