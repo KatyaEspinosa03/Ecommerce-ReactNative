@@ -35,28 +35,24 @@ const Cart = () => {
       </View>
 
       <View style={styles.containerCart}>
-
-      <View>
-            <Text style={styles.textPrice}>
-              {`Total: $${total}`}
-            </Text>
-          </View>
-
           <Pressable
         onPress={handleEmptyCart}>
-          <Text style={{color: 'white'}}> VACIAR </Text>
+          <Text  style={styles.textConfirm}> Vaciar </Text>
         </Pressable>
         
         <Pressable
         onPress={confirmCart}>
-          
           <Text style={styles.textConfirm}>
             Comprar
           </Text>
-
-
-
         </Pressable>
+
+        <View>
+            <Text style={styles.textPrice}>
+              {`Total: $${total}`}
+            </Text>
+        </View>
+
       </View>
 
     </View>

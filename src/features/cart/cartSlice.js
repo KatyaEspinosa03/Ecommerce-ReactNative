@@ -74,8 +74,8 @@ export const cartSlice = createSlice({
             
             return {
                 ...state,
-                cartItems:  [],
-                total: 0, 
+                cartItems: [],
+                total: 0,
                 updatedAt: new Date().toLocaleString()
             }
         }

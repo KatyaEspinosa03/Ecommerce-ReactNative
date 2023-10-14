@@ -7,13 +7,16 @@ export default styles = StyleSheet.create({
         backgroundColor: colors.primary,
     },
     containerCart: {
-        alignItems: 'flex-end',
-        marginLeft: 'auto',
-        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        // alignItems: 'flex-end',
         padding: 10,
         marginHorizontal: 10,
-        marginTop: 10,
-        height: '50%'
+        position: 'absolute',
+        height: 'auto',
+        bottom: 0,
+        left: 0,
+        right: 0,
     },
     textPrice: {
         textAlign: 'right',
@@ -21,6 +24,8 @@ export default styles = StyleSheet.create({
         fontSize: 20,
         color: colors.tertiary,
         padding: 5,
+        marginTop: 20,
+    
     },
     textConfirm: {
         textAlign: 'center',
