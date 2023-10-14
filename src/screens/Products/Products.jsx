@@ -1,8 +1,7 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import allProducts from '../../data/products'
 import styles from './Products.styles'
-import {Header, SearchInput} from '../../components'
+import { SearchInput} from '../../components'
 import { useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../../services/shopAPI'
 
@@ -15,28 +14,29 @@ const Products = ({ navigation, route }) => {
 
   const category = useSelector(state => state.shop.categorySelected)
    const [keyword, setKeyword] = useState('')
+   const [products, setProducts] = useState([])
    const { data, isLoading } = useGetProductsByCategoryQuery(category)
    console.log(data)
 
-  //  useEffect(() => {
+   useEffect(() => {
 
-  //   let productsFiltered;
-  //   if(data){
-  //       productsFiltered = data.filter(
-  //           product => product.title.includes(keyword)
-  //           )
-  //   }
-  //  },[keyword]);
+    if(!isLoading){
+      const dataArr = Object.values(data)
+      setProducts(dataArr)
+        const productsFiltered = dataArr.filter(
+            product => product.title.includes(keyword)
+            )
+            setProducts(productsFiltered)
+    }
+   },[isLoading, keyword]);
    
-  //  console.log(keyword)
   return (
     <View style={styles.container}> 
-      {/* <Header title={category} /> */}
-      {/* <SearchInput onSearch={setKeyword}/> */}
+      <SearchInput onSearch={setKeyword}/>
       <View style={styles.listContainer}>
         {!isLoading && (
               <FlatList 
-              data={Object.values(data)}
+              data={products}
               numColumns={2}
               columnWrapperStyle={styles.wrapperStyle}
               renderItem={({item}) => (

@@ -9,7 +9,7 @@ export default styles = StyleSheet.create({
     containerCart: {
         alignItems: 'flex-end',
         marginLeft: 'auto',
-        width: '40%',
+        width: '100%',
         padding: 10,
         marginHorizontal: 10,
         marginTop: 10,

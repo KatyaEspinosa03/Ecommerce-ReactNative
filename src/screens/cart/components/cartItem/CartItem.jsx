@@ -4,7 +4,7 @@ import styles from './CartItem.styles'
 import Feather from '@expo/vector-icons/Feather'
 import { colors } from '../../../../constants/colors'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeFromCart } from '../../../../features/cart/cartSlice'
+import { removeFromCart} from '../../../../features/cart/cartSlice'
 
 
 const CartItem = ({item}) => {
@@ -14,6 +14,7 @@ const CartItem = ({item}) => {
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart(item.id))
   }
+
   return (
     <View style={styles.container}>
 
@@ -31,6 +32,7 @@ const CartItem = ({item}) => {
         </Pressable>
          </View>
       </View>
+
     </View>
   )
 }

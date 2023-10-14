@@ -2,14 +2,15 @@ import { View, Text, FlatList, Pressable } from 'react-native'
 import React from 'react'
 import styles from './Cart.styles.js'
 import CartItem from './components/cartItem/CartItem'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { usePostOrderMutation } from '../../services/shopAPI.js'
+import { emptyCart } from '../../features/cart/cartSlice.js'
 
 const Cart = () => {
   const total = useSelector(state => state.cart.total)
   const cartItems = useSelector((state) => state.cart.cartItems);
   const [triggerPost, result] = usePostOrderMutation()
-
+  const dispatch = useDispatch()
 
   const renderItem = ({item}) => (
     <CartItem 
@@ -18,6 +19,10 @@ const Cart = () => {
 
   const confirmCart = () => {
     triggerPost({total, cartItems, user: "loggedUser"})
+  }
+
+  const handleEmptyCart = () => {
+    dispatch(emptyCart())
   }
   return (
     <View style={styles.container}>
@@ -37,6 +42,11 @@ const Cart = () => {
             </Text>
           </View>
 
+          <Pressable
+        onPress={handleEmptyCart}>
+          <Text style={{color: 'white'}}> VACIAR </Text>
+        </Pressable>
+        
         <Pressable
         onPress={confirmCart}>
           
@@ -48,6 +58,7 @@ const Cart = () => {
 
         </Pressable>
       </View>
+
     </View>
   )
 }

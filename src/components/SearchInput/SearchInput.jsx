@@ -1,13 +1,17 @@
 import {Pressable, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
-
 import AntDesign from '@expo/vector-icons/AntDesign'
 import styles from './SearchInput.styles'
 import { colors } from '../../constants/colors'
+import { useEffect } from 'react'
 
 
 const SearchInput = ({onSearch}) => {
     const [value, setValue] = useState("")
+
+    useEffect(() => {
+      onSearch(value)
+    }, [value])
 
     const search = () => {
         onSearch(value)

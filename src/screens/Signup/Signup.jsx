@@ -19,10 +19,12 @@ const Signup = ({navigation}) => {
       email, 
       password,
     })
-    console.log(result)
-    if(result.isSuccess) {
-      dispatch(setUser(result.data))
-    }
+    .unwrap()
+    .then(result => {
+      console.log(result)
+      dispatch(setUser(result))
+    }).catch(err => console.log(err))
+
   }
   return (
     <View style={styles.container}>
