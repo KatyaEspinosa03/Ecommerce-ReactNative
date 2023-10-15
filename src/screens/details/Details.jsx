@@ -4,6 +4,7 @@ import styles from './details.style'
 import { Counter, AddToCart } from '../../components'
 import {useSelector, useDispatch} from 'react-redux'
 import { addToCart } from '../../features/cart/cartSlice'
+import { stopLocationUpdatesAsync } from 'expo-location'
 
 
 const Details = ({ route }) => {
@@ -25,7 +26,7 @@ const Details = ({ route }) => {
     <View style={styles.productContainer}>
       <Image style={styles.image}
       source={{ uri: product.images[0]}} />
-    <ScrollView>
+    <ScrollView style={styles.scrollViewStyle}>
       <Text  style={styles.textProduct}> {product.title} </Text>
       <Text  style={styles.price}> {`$ ${product.price}`} </Text>
       <Text style={styles.textDescription}> {product.description} </Text>

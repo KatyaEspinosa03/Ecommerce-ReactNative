@@ -26,5 +26,9 @@ export default styles = StyleSheet.create({
         fontFamily: 'GaretBook',
         fontSize: 16,
         color: colors.primary,
+    },
+    subtitle: {
+        fontFamily: 'GaretHeavy',
+        color: colors.secondary,
     }
 })

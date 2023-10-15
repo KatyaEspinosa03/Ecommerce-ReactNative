@@ -6,8 +6,8 @@ export default styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.primary,
         paddingHorizontal: 16,
-        paddingTop: 20,
-        paddingBottom: 60,
+        paddingTop: 5,
+        paddingBottom: '65%',
     },
     productContainer: {
         backgroundColor: colors.tertiary,
@@ -17,13 +17,10 @@ export default styles = StyleSheet.create({
     },
     image:{
         height: '50%',
-        width: '80%',
-        borderWidth: 5,
-        borderColor: colors.quaternary,
-        borderRadius: 8,
-        marginTop: 15,
+        width: '90%',
         alignSelf: 'center',
-        resizeMode: 'cover'
+        resizeMode: 'cover',
+        borderRadius: 10
     },
     textProduct: {
         marginTop: 10,
@@ -47,5 +44,8 @@ export default styles = StyleSheet.create({
     counter:{
         marginTop: 20,
     },
+    scrollViewStyle:{
+        height: '80%'
+    }
 
 })

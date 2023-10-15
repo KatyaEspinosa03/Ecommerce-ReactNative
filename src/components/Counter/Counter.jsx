@@ -7,7 +7,7 @@ import styles from './Counter.styles'
 const Counter = ({product}) => {
 
   // atraves de counter tengo acceso al estado y al valor que se definió en counterSlice
-  const counter = useSelector(state => state.counter[product.id] || 0)
+  const counter = useSelector(state => state.counter[product.id] || 1)
   const dispatch = useDispatch()
 
   return (

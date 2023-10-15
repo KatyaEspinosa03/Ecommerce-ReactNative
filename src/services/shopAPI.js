@@ -22,12 +22,12 @@ export const shopApi = createApi({
             method: 'POST',
             body: order,
         }),
+    }),
     getOrders: builder.query({
             query: () => `orders.json`,
         }),
-    }),
     getProfileImage: builder.query({
-       query: localId =>  `profileImages/${localId}.json`
+        query: localId =>  `profileImages/${localId}.json`
     }),
     postProfileImage: builder.mutation({
         query: ({image, localId}) => ({

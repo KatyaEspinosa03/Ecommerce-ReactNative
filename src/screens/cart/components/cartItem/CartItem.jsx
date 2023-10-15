@@ -1,4 +1,4 @@
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, Image } from 'react-native'
 import React from 'react'
 import styles from './CartItem.styles'
 import Feather from '@expo/vector-icons/Feather'
@@ -17,9 +17,10 @@ const CartItem = ({item}) => {
 
   return (
     <View style={styles.container}>
-
       <View>
+
       <Text style={styles.name}>{item.title}</Text>
+      <Text style={styles.subtitle}>{item.category}</Text>
     </View>
       
       <View>
