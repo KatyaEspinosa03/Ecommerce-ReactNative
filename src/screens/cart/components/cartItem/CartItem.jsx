@@ -17,12 +17,21 @@ const CartItem = ({item}) => {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.titleContainer}>
+      <Image
+               style={styles.image}
+               source={{
+                uri: item.images[0]
+              }} />
 
-      <Text style={styles.name}>{item.title}</Text>
-      <Text style={styles.subtitle}>{item.category}</Text>
+              <View>
+              <Text style={styles.name}>{item.title}</Text>
+              <Text style={styles.subtitle}>{item.category}</Text>
+              </View>
     </View>
-      
+
+     
+
       <View>
         <View style={styles.details}>
             <Text style={styles.detailsText}> Cantidad: {item.quantity} </Text>

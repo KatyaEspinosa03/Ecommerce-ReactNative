@@ -13,7 +13,10 @@ export default styles = StyleSheet.create({
     name: {
         fontSize: 18,
         fontFamily: 'GaretHeavy',
-        color: colors.quaternary
+        color: colors.quaternary,
+        width: '70%',
+        marginHorizontal: 10,
+        marginTop: 15,
     },
     details: {
         flex: 1,
@@ -30,5 +33,15 @@ export default styles = StyleSheet.create({
     subtitle: {
         fontFamily: 'GaretHeavy',
         color: colors.secondary,
+        width: '80%',
+        marginHorizontal: 10,
+    },
+    image: {
+        height: 100,
+        width: 100,
+        borderRadius: 10
+    },
+    titleContainer:{
+        flexDirection: 'row',
     }
 })

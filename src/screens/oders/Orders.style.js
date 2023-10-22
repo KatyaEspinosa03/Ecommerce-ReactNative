@@ -31,7 +31,6 @@ export default styles = StyleSheet.create({
         marginRight: 5,
     },
     image: {
-        alignSelf: 'left',
         height: 100,
         width: 100,
         borderRadius: 10
