@@ -9,7 +9,6 @@ export default styles = StyleSheet.create({
     containerCart: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        // alignItems: 'flex-end',
         padding: 10,
         marginHorizontal: 10,
         position: 'absolute',
@@ -17,6 +16,7 @@ export default styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
+        backgroundColor: colors.primary
     },
     textPrice: {
         textAlign: 'right',

@@ -26,6 +26,17 @@ export const shopApi = createApi({
     getOrders: builder.query({
             query: () => `orders.json`,
         }),
+    
+    postWishlist: builder.mutation({
+        query: ({...wishlist}) => ({
+            url: 'wishlist.json',
+            method: 'POST',
+            body: wishlist,
+        }),    
+    }),
+    getWishList: builder.query({
+        query: () => `wishlist.json`
+    }),
     getProfileImage: builder.query({
         query: localId =>  `profileImages/${localId}.json`
     }),
@@ -49,4 +60,6 @@ export const {
     useGetProfileImageQuery,
     usePostProfileImageMutation,
     useGetOrdersQuery,
+    usePostWishlistMutation,
+    useGetWishListQuery,
 } = shopApi

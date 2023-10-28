@@ -3,7 +3,7 @@ import { colors } from "../../../../constants/colors";
 
 export default styles = StyleSheet.create({
     container: {
-        marginTop: 10,
+        marginTop: 5,
         flex: 1,
         marginHorizontal: 12,
         backgroundColor: colors.tertiary,
@@ -11,10 +11,10 @@ export default styles = StyleSheet.create({
         borderRadius: 10,
     },
     name: {
-        fontSize: 18,
+        fontSize: 16,
         fontFamily: 'GaretHeavy',
         color: colors.quaternary,
-        width: '70%',
+        width: '50%',
         marginHorizontal: 10,
         marginTop: 15,
     },

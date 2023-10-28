@@ -6,12 +6,14 @@ import authSlice from '../features/auth/authSlice'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
 import { shopApi } from '../services/shopAPI'
 import { authApi } from '../services/authApi'
+import wishlistSlice from '../features/wishList/wishlistSlice'
 
 const store = configureStore({
   reducer: {
     // para usar todo lo implementado en counterSlice se utilizara el nombre de counter
     counter: counterSlice,
     shop: shopSlice,
+    wishlist: wishlistSlice,
     [shopApi.reducerPath]: shopApi.reducer,
     cart: cartSlice,
     [authApi.reducerPath]: authApi.reducer,

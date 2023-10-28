@@ -14,7 +14,7 @@ const Orders = () => {
   const {user} = useSelector(state => state.auth)
   const dispatch = useDispatch()
 
-  console.log(data)
+  console.log("estas son las ordenes", data)
 
   useEffect(() => {
     ;(async () => {
