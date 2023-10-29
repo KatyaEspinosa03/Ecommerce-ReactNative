@@ -1,7 +1,7 @@
 import { Text, View, Image, ScrollView, Pressable } from 'react-native'
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from './details.style'
-import { Counter, AddToCart } from '../../components'
+import { Counter, AddToCart, CustomModal } from '../../components'
 import {useSelector, useDispatch} from 'react-redux'
 import { addToCart } from '../../features/cart/cartSlice'
 import Feather from '@expo/vector-icons/Feather'
@@ -9,7 +9,7 @@ import { colors } from '../../constants/colors'
 import { fetchSession } from '../../db/index.js'
 import { setUser } from '../../features/auth/authSlice.js'
 import { usePostWishlistMutation } from '../../services/shopAPI.js'
-import { addToWishlist } from '../../features/wishList/wishlistSlice'
+
 
 
 const Details = ({ route }) => {
@@ -19,7 +19,8 @@ const Details = ({ route }) => {
   const dispatch = useDispatch();
   const quantity = useSelector((state) => state.counter[product.id])
   const [triggerPost, result] = usePostWishlistMutation()
-
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
 
   useEffect(() => {
     ;(async () => {
@@ -39,11 +40,15 @@ const Details = ({ route }) => {
     // utilizo quantity proveniente del counter para tomar en cuenta la cantidad que el 
     // usuario selecciona y si no seleccinó ninguna, se pone 1 por default 
     dispatch(addToCart({...product, quantity: quantity || 1}));
+    setIsModalVisible(true)
+    setModalMessage(`${product.title} fue agregado al carrito`)
     console.log(quantity)
     console.log(product)
   };
 
-  const handleAddToWishlist = async () => {
+  const handleAddToWishlist = () => {
+    setIsModalVisible(true)
+    setModalMessage(`${product.title} fue agregado a tu wishlist, recarga la app`)
     triggerPost({...product, user: user})
     console.log("agregado a wishlist:", product.title)
     
@@ -69,6 +74,10 @@ const Details = ({ route }) => {
         <AddToCart onPress={handleAddToCart}/>
         </View>
       </View>
+      <CustomModal 
+      visible={isModalVisible}
+      message={modalMessage}
+      onClose={() => setIsModalVisible(false)}/>
     </View>
   )
 }

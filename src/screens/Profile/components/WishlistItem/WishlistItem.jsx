@@ -5,9 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchSession } from '../../../../db'
 import { setUser } from '../../../../features/auth/authSlice'
 import styles from './WishlistItem.styles'
-import Feather from '@expo/vector-icons/Feather'
-import { colors } from '../../../../constants/colors'
-import { useRemoveFromWishlistMutation } from '../../../../services/shopAPI'
+
 
 
 const WishlistItem = ({navigation}) => {
@@ -15,7 +13,6 @@ const WishlistItem = ({navigation}) => {
     const {data, isLoading} = useGetWishListQuery()
     const wishlistItems = data ? Object.keys(data).map(key => data[key]) : [];
     const {user} = useSelector(state => state.auth)
-    const [triggerDelete, result ] = useRemoveFromWishlistMutation()
     const dispatch = useDispatch()
 
     // console.log("esta es la lista de wishlist", data)
@@ -37,23 +34,6 @@ const WishlistItem = ({navigation}) => {
     const userWishlist = wishlistItems.filter((item) => item.user === user)
 
 
-    // const handleRemoveFromWishList = (itemKey) => {
-
-    //   triggerDelete({key: itemKey})
-    //   .then((result) => {
-    //     if (result.error) {
-    //       console.log("error deleting item", result.error)
-    //     }else {
-    //       console.log('item deleted from the wishlist', itemKey);
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log('error;', error);
-    //   })
-
-    // }
-
-
   return (
     <View style={styles.container}>
       {!isLoading && userWishlist.length > 0 ? (
@@ -66,12 +46,6 @@ const WishlistItem = ({navigation}) => {
             key={item.id}
             style={styles.imageContainer}>
               
-              {/* <Pressable style={styles.minusButton}
-              onPress={() => {
-                console.log('item id', item.key)
-              handleRemoveFromWishList(item.key)}}>
-            <Feather name="minus-circle" size={26} color= {colors.secondary} />
-        </Pressable> */}
         <TouchableOpacity
         onPress={() => navigation.navigate('Details', { product: item })}>
         <Image

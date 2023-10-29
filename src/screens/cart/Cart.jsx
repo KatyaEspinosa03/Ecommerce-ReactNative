@@ -8,6 +8,7 @@ import { emptyCart } from '../../features/cart/cartSlice.js'
 import { useState } from 'react'
 import { fetchSession } from '../../db/index.js'
 import { setUser } from '../../features/auth/authSlice.js'
+import { CustomModal } from '../../components/index.js'
 
 const Cart = () => {
   const total = useSelector(state => state.cart.total)
@@ -16,6 +17,8 @@ const Cart = () => {
   const [triggerPost, result] = usePostOrderMutation()
   const dispatch = useDispatch()
   const [isPressed, setIsPressed] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [modalMessage, setModalMessage] = useState('')
 
   //Use effect para obtener el usuario que realiza la orden
 
@@ -43,6 +46,8 @@ const Cart = () => {
   )
 
   const confirmCart = () => {
+    setIsModalVisible(true)
+    setModalMessage(`Tu compra ha sido registrada, recarga la app y podrás ver tus productos en órdenes.`)
     triggerPost({total, cartItems, user: user})
   }
 
@@ -87,7 +92,10 @@ const Cart = () => {
         </View>
 
       </View>
-
+      <CustomModal 
+      visible={isModalVisible}
+      message={modalMessage}
+      onClose={() => setIsModalVisible(false)}/>
     </View>
   )
 }

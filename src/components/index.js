@@ -4,4 +4,5 @@ import SearchInput from './SearchInput/SearchInput'
 import Counter from './Counter/Counter'
 import AddToCart from './AddToCart/AddToCart'
 import MapPreview from './MapPreview/MapPreview'
-export {Card, Header, SearchInput, Counter, AddToCart, MapPreview}
+import CustomModal from './CustomModal/CustomModal'
+export {Card, Header, SearchInput, Counter, AddToCart, MapPreview, CustomModal}

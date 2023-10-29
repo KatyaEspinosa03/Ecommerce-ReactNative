@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
         bottom: 0,
         left: 0,
         right: 0,
-        backgroundColor: colors.primary
+        backgroundColor: `${colors.primary}90`
     },
     textPrice: {
         textAlign: 'right',
