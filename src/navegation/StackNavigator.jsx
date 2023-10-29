@@ -3,7 +3,6 @@ import { Button, View } from "react-native";
 import { Header } from "../components";
 import { colors } from "../constants/colors";
 import {Home, Products, Details} from '../screens'
-
 const Stack = createNativeStackNavigator()
 
 function StackNavigator() {

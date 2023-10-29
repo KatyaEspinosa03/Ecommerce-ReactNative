@@ -6,6 +6,8 @@ import logo from '../../assets/images/logo.png'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCameraImage } from '../../features/auth/authSlice'
 import { usePostProfileImageMutation } from '../../services/shopAPI'
+import { WishlistItem } from './components'
+
 
 const Profile = ({navigation}) => {
    const image = useSelector(state => state.auth.imageCamera)
@@ -75,17 +77,15 @@ const Profile = ({navigation}) => {
       <Pressable
       style={styles.confirmButton}
       onPress={confirmImage}>
-        <Text style={styles.text}> Confirmar </Text>
+        <Text style={styles.text}> Confirmar</Text>
       </Pressable>
         </View>
 
+        <Text style={styles.wishlist}> Wishlist </Text>
+        <WishlistItem navigation={navigation}/>
 
-      <Pressable
-      style={styles.locationButton}
-      onPress={() => navigation.navigate('Location')}>
-        <Text style={styles.text}> Conoce tu ubicación </Text>
-      </Pressable>
     </View>
+
   )
 }
 

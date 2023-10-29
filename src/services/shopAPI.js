@@ -34,6 +34,12 @@ export const shopApi = createApi({
             body: wishlist,
         }),    
     }),
+    removeFromWishlist: builder.mutation({
+        query: ({ itemKey }) => ({
+            url: `wishlist/${itemKey}.json`,
+            method: 'DELETE',
+        })
+    }),
     getWishList: builder.query({
         query: () => `wishlist.json`
     }),
@@ -62,4 +68,5 @@ export const {
     useGetOrdersQuery,
     usePostWishlistMutation,
     useGetWishListQuery,
+    useRemoveFromWishlistMutation,
 } = shopApi

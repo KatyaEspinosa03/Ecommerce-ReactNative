@@ -9,6 +9,7 @@ import { colors } from '../../constants/colors'
 import { fetchSession } from '../../db/index.js'
 import { setUser } from '../../features/auth/authSlice.js'
 import { usePostWishlistMutation } from '../../services/shopAPI.js'
+import { addToWishlist } from '../../features/wishList/wishlistSlice'
 
 
 const Details = ({ route }) => {
@@ -42,7 +43,7 @@ const Details = ({ route }) => {
     console.log(product)
   };
 
-  const handleAddToWishlist = () => {
+  const handleAddToWishlist = async () => {
     triggerPost({...product, user: user})
     console.log("agregado a wishlist:", product.title)
     

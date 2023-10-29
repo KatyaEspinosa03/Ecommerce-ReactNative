@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
         height: 200,
         borderWidth: 2,
         borderColor: colors.tertiary,
-        borderRadius: 10,
+        borderRadius: 100,
         marginTop: 15,
     },
     buttonContainer:{
@@ -54,5 +54,14 @@ export default styles = StyleSheet.create({
         color: colors.secondary,
         fontFamily: 'GaretBook',
         fontSize: 20,
+    },
+    wishlist: {
+        fontFamily: 'GaretHeavy',
+        color: colors.tertiary,
+        marginTop: 90,
+        fontSize: 40,
+        textShadowColor: colors.secondary,
+        textShadowOffset: {with: 4, height: 1},
+        textShadowRadius: 15,
     }
 })
