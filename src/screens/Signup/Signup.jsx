@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable, Image } from 'react-native'
+import { View, Text, TextInput, Pressable, Image, KeyboardAvoidingView, Platform } from 'react-native'
 import React, {useState} from 'react'
 import styles from './Signup.styles'
 import logo from '../../assets/images/logo.png'
@@ -27,6 +27,9 @@ const Signup = ({navigation}) => {
 
   }
   return (
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : null}
+    style={{ flex: 1 }}>
     <View style={styles.container}>
      <View style={styles.signupContainer}> 
      <Image source={logo}
@@ -41,11 +44,13 @@ const Signup = ({navigation}) => {
         <TextInput style={styles.inputEmail}
         value={password}
         onChangeText={setPassword}
-        placeholder="ingresa tu contraseña"/>
+        placeholder="ingresa tu contraseña"
+        secureTextEntry/>
         <TextInput style={styles.inputEmail}
         value={confirmPassword}
         onChangeText={setConfirmPassword}
-        placeholder="confirma tu contraseña"/>
+        placeholder="confirma tu contraseña"
+        secureTextEntry/>
 
         <Pressable style={styles.loginButton}
         onPress={onSubmit}>
@@ -59,6 +64,7 @@ const Signup = ({navigation}) => {
         </Pressable>
      </View>
     </View>
+    </KeyboardAvoidingView>
   )
 }
 

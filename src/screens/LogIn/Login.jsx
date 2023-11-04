@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable, Image } from 'react-native'
+import { View, Text, TextInput, Pressable, Image, KeyboardAvoidingView, Platform  } from 'react-native'
 import React from 'react'
 import styles from './Login.styles'
 import logo from '../../assets/images/logo.png'
@@ -31,6 +31,9 @@ const Login = ({navigation}) => {
  }
 
   return (
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : null}
+    style={{ flex: 1 }}>
     <View style={styles.container}>
      <View style={styles.loginContainer}> 
 
@@ -47,7 +50,8 @@ const Login = ({navigation}) => {
         <TextInput style={styles.inputEmail}
         placeholder="ingresa tu contraseña"
         value={password}
-        onChangeText={setPassword}/>
+        onChangeText={setPassword}
+        secureTextEntry/>
         <Pressable style={styles.loginButton}
         onPress={onSubmit}>
             <Text style={styles.subtext}> Login </Text>
@@ -61,6 +65,7 @@ const Login = ({navigation}) => {
         </Pressable>
      </View>
     </View>
+    </KeyboardAvoidingView>
   )
 }
 
