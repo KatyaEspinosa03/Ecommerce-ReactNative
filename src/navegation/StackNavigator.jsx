@@ -10,23 +10,29 @@ function StackNavigator() {
             <Stack.Navigator initialRouteName='Home' 
             screenOptions={({route, navigation}) => ({
                 headerShown: true,
-               header: () => (            
-            <View style={{flexDirection: 'row', backgroundColor: colors.primary}}>
-                <View style={{marginTop: 55, marginLeft: 10}}>
-                <Button 
-                title='Go back'
-                onPress={() => navigation.goBack()}
-                color={colors.tertiary}           
-                />
-                </View>
-                <Header title={
-                    route.name === "Home" ? "Home":
-                    route.name === "Products" ? route.params.category:
-                    "Detalles"
-                }/>
-
-            </View>
-            ),
+               header: () => {
+                    if(route.name === 'Home'){
+                        return (
+                            <View style={{ flexDirection: 'row', backgroundColor: colors.primary}}>
+                                <Header title='Home'/>
+                            </View>
+                        )
+                    }else {
+                        return (
+                            <View style={{ flexDirection: 'row', backgroundColor: colors.primary}}>
+                                <View style={{ marginTop: 55, marginLeft: 10}}>
+                                    <Button
+                                    title='Go back'
+                                    onPress={() => navigation.goBack()}
+                                    color={colors.tertiary}/>
+                                </View>
+                                <Header 
+                                title={ route.name === "Products" ? route.params.category:
+                                "Detalles"}/>
+                            </View>
+                        )
+                    }
+               },
             })} >
                     
                 <Stack.Screen name='Home' component={Home} />
